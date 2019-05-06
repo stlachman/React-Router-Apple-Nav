@@ -1,4 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+import Home from './components/Home';
+import Mac from './components/Mac';
+import NavWrapper from './components/NavWrapper';
 import './App.css';
 
 class App extends React.Component {
@@ -9,7 +13,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Hello</h2>
+        <NavWrapper />
+        <Route exact path="/" component={Home} />
+        <Route path="/mac" component={Mac} />
       </div>
     )
   }
