@@ -12,17 +12,14 @@ const LinkElem = styled(Link)`
 `;
 
 const SubNav = props => {
-  console.log(props)
   return (
     <div>
       <div>
         <LinkElem to={`/${props.name}/${convertToUrl(props.item.name)}`}>{props.item.name}</LinkElem>
       </div>
-      <Route exact path={`/${props.name}/${convertToUrl(props.item.name)}`} render={() => <PageContent name={props.item.name}/>}/>
     </div>
   )
 }
-
 function convertToUrl(str) {
   return str.toLowerCase().split(" ").join("-");
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 import SubNav from './SubNav/SubNav';
+import PageContent from './SubNav/PageContent';
 import data from '../data.js';
 
 const Container = styled.div`
@@ -27,8 +28,17 @@ const ProductPage = (props) => {
 		<Container>
 			<Title>{name}</Title>
 			<ListContainer>{data.model[lowerCaseName].map((item, index) => <SubNav name={lowerCaseName} item={item} key={index} />)}</ListContainer>
+      <div>
+        {data.model[lowerCaseName].map((item, index) => (
+          <Route exact path={`/${lowerCaseName}/${convertToUrl(item.name)}`} render={() => <PageContent name={item.name} /> } />
+        ))}
+      </div>
 		</Container>
-	);
+  );
 };
+
+function convertToUrl(str) {
+  return str.toLowerCase().split(" ").join("-");
+}
 
 export default ProductPage;
