@@ -11,58 +11,14 @@ const LinkElem = styled(Link)`
   font-weight: 500;
 `;
 
-// const macs = [
-//   {
-//     name: 'MacBook'
-//   },
-//   {
-//     name: 'MacBook Air'
-//   },
-
-//   {
-//     name: 'MacBook Pro'
-//   },
-
-//   {
-//     name: 'iMac'
-//   },
-
-//   {
-//     name: 'iMac Pro'
-//   },
-
-//   {
-//     name: 'Mac Pro'
-//   },
-
-//   {
-//     name: 'Mac mini'
-//   },
-
-//   {
-//     name: 'Accessories'
-//   },
-
-//   {
-//     name: 'High Sierra'
-//   },
-
-//   {
-//     name: 'Compare'
-//   },
-
-// ]
-
-// {macs.map((mac, index) => <SubNav mac={mac} key={index} />)}
-
-
 const SubNav = props => {
+  console.log(props)
   return (
     <div>
       <div>
-        <LinkElem to={`/mac/${convertToUrl(props.mac.name)}`}>{props.mac.name}</LinkElem>
+        <LinkElem to={`/${props.name}/${convertToUrl(props.item.name)}`}>{props.item.name}</LinkElem>
       </div>
-      <Route exact path={`/mac/${convertToUrl(props.mac.name)}`} render={() => <PageContent name={props.mac.name}/>}/>
+      <Route exact path={`/${props.name}/${convertToUrl(props.item.name)}`} render={() => <PageContent name={props.item.name}/>}/>
     </div>
   )
 }
