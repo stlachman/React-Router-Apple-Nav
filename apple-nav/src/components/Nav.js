@@ -3,13 +3,14 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavListItem = styled.li`
-	margin: 0 2rem;
+	margin: 0 3rem;
 	display: inline-block;
 `;
 
 const LinkElem = styled(NavLink)`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #fff;
+  text-decoration: none;
 `;
 
 const Nav = props => {

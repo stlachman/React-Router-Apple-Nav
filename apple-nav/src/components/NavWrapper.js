@@ -37,18 +37,26 @@ const TopNavItems = [
 	}
 ];
 
-const NavBar = styled.div`background: #323232;`;
+const NavBar = styled.div`
+  background: #323232;
+  padding: 1rem 0;  
+`;
+
+const Navigation = styled.nav`
+  max-width: 900px;
+  margin: 0 auto;
+`;
 
 const NavList = styled.ul`list-style-type: none;`;
 
 const NavWrapper = (props) => {
 	return (
 		<NavBar>
-			<nav>
+			<Navigation>
 				<NavList>
           {TopNavItems.map((item, index) => <Nav item={item} key={index} />)}
 				</NavList>
-			</nav>
+			</Navigation>
 		</NavBar>
 	);
 };
