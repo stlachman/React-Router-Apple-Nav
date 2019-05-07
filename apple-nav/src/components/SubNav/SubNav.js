@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import PageContent from './PageContent';
 
 const LinkElem = styled(Link)`
   font-size: 1.7rem;

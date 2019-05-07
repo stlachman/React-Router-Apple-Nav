@@ -30,7 +30,7 @@ const ProductPage = (props) => {
 			<ListContainer>{data.model[lowerCaseName].map((item, index) => <SubNav name={lowerCaseName} item={item} key={index} />)}</ListContainer>
       <div>
         {data.model[lowerCaseName].map((item, index) => (
-          <Route exact path={`/${lowerCaseName}/${convertToUrl(item.name)}`} render={() => <PageContent name={item.name} /> } />
+          <Route exact path={`/${lowerCaseName}/${convertToUrl(item.name)}`} render={() => <PageContent key={index} name={item.name} /> } key={index}/>
         ))}
       </div>
 		</Container>
