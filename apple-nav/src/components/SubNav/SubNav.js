@@ -11,6 +11,50 @@ const LinkElem = styled(Link)`
   font-weight: 500;
 `;
 
+// const macs = [
+//   {
+//     name: 'MacBook'
+//   },
+//   {
+//     name: 'MacBook Air'
+//   },
+
+//   {
+//     name: 'MacBook Pro'
+//   },
+
+//   {
+//     name: 'iMac'
+//   },
+
+//   {
+//     name: 'iMac Pro'
+//   },
+
+//   {
+//     name: 'Mac Pro'
+//   },
+
+//   {
+//     name: 'Mac mini'
+//   },
+
+//   {
+//     name: 'Accessories'
+//   },
+
+//   {
+//     name: 'High Sierra'
+//   },
+
+//   {
+//     name: 'Compare'
+//   },
+
+// ]
+
+// {macs.map((mac, index) => <SubNav mac={mac} key={index} />)}
+
 
 const SubNav = props => {
   return (

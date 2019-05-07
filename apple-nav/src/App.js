@@ -1,13 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './components/Home';
-import Mac from './components/Mac';
-import Ipad from './components/Ipad';
-import Iphone from './components/Iphone';
-import Watch from './components/Watch';
-import Tv from './components/Tv';
-import Music from './components/Music';
-import Support from './components/Support';
+import ProductPage from './components/ProductPage';
 
 import NavWrapper from './components/NavWrapper';
 import './App.css';
@@ -15,31 +9,31 @@ import './App.css';
 const routes = [
   {
     path: '/mac',
-    component: Mac
+    name: 'Mac'
   },
   {
     path: '/ipad',
-    component: Ipad
+    name: 'iPad'
   },
   {
     path: '/iphone',
-    component: Iphone
+    name: 'iPhone'
   },
   {
     path: '/watch',
-    component: Watch
+    name: 'Watch'
   },
   {
     path: '/tv',
-    component: Tv
+    name: 'TV'
   },
   {
     path: '/music',
-    component: Music
+    name: 'Music'
   },
   {
     path: '/support',
-    component: Support
+    name: 'Support'
   }
 ]
 
@@ -53,8 +47,8 @@ class App extends React.Component {
       <div>
         <NavWrapper />
         <Route exact path="/" component={Home}/>
-        {routes.map(({ path, component: C }, index) => ( 
-           <Route path={path} component={C} key={index} />
+        {routes.map(({ path, name }, index) => ( 
+           <Route path={path} render={(props)=> <ProductPage {...props} name={name} />} key={index} />
         ))}
       </div>
     )
